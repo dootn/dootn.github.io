@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title> on Dootn&#39;s Blog</title>
+        <link>http://localhost:1313/</link>
+        <language>zh-CN</language>
+        <author>Dootn</author>
+        <rights>Copyright (c) 2015,all rights reserved.</rights>
+        <updated>Mon, 01 Jan 0001 00:00:00 UTC</updated>
+        
+        <item>
+            <title>关于我</title>
+            <link>http://localhost:1313/about</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 UTC</pubDate>
+            <author>Dootn</author>
+            <guid>http://localhost:1313/about</guid>
+            <description>&lt;p class=&#34;message&#34;&gt;
+大家好，这是我的博客。
+&lt;/p&gt;
+</description>
+        </item>
+        
+        <item>
+            <title>Ubuntu 14.04 安装 A 卡驱动</title>
+            <link>http://localhost:1313/2015/08/29/hugo</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 UTC</pubDate>
+            <author>Dootn</author>
+            <guid>http://localhost:1313/2015/08/29/hugo</guid>
+            <description>&lt;p&gt;###首先安装依赖关系和必要的软件包。
+sudo apt-get update
+sudo apt-get install libqtgui4
+sudo apt-get install dh-make dh-modaliases execstack libc6-i386 lib32gcc1 dkms&lt;/p&gt;
+
+&lt;p&gt;下载AMD驱动 xxxxxxxxxxxxx.runsudo ./xxxxxxxxxxxxx.run&lt;/p&gt;
+
+&lt;p&gt;sudo aticonfig &amp;ndash;initial这样驱动程序就算安装好了，接下来重新启动下电脑。
+重启后，还要测试驱动是否已经生效！
+执行：fglrxinfo   可以查看到相关信息
+执行：fgl_glxgears   出现立方体在旋转
+获取当前显卡、显存频率及GPU使用率：aticonfig &amp;ndash;od-getclocks
+获取显卡风扇转速百分比：aticonfig &amp;ndash;pplib-cmd get fanspeed
+获取显卡当前温度 ：aticonfig –odgt
+帮助命令：aticonfig –help&lt;/p&gt;
+
+&lt;p&gt;###A卡与集显双显卡切换方法：
+查看当前正在运行的显卡模式：aticonfig –pxl
+切换显卡为独显（ discrete） (高性能模式),
+重启生效：sudo aticonfig &amp;ndash;px-dgpu&lt;/p&gt;
+
+&lt;p&gt;切换显卡为集显( integrated ) 模式 (节电模式),
+重启生效：sudo aticonfig &amp;ndash;px-igpu&lt;/p&gt;
+
+&lt;p&gt;另外＿以管理员权限开启显卡管理：sudo amdcccle&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;###安装失败清理方法：
+看下是否有fglrx-uninstall.sh 文件，如果有的话，继续执行：sudo ./fglrx-uninstall.sh（如果没有，可以在图形界面下，也只能在图形界面下使用 sudo ./amd-XXXXXXXX.run  不加参数运行下，就会在/usr/share/ati 目录下生成fglrx-uninstall.sh 文件）（可以用命令 sudo aticonfig &amp;ndash;uninstall=force 代替，）之后，再依次执行：
+sudo apt-get remove &amp;ndash;purge fglrx*
+sudo apt-get remove &amp;ndash;purge xserver-xorg-video-ati xserver-xorg-video-radeon
+sudo apt-get install xserver-xorg-video-ati
+sudo apt-get install &amp;ndash;reinstall libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-core
+sudo dpkg-reconfigure xserver-xorg
+之后重启，继续安装。&lt;/p&gt;
+</description>
+        </item>
+        
+        <item>
+            <title>Ubuntu的系统备份与还原</title>
+            <link>http://localhost:1313/2015/08/29/hugo</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 UTC</pubDate>
+            <author>Dootn</author>
+            <guid>http://localhost:1313/2015/08/29/hugo</guid>
+            <description>&lt;p&gt;1、 sudo su
+2、转到根目录： cd /
+　 　tar -cvpzf /media/backup.tgz &amp;ndash;exclude=/proc &amp;ndash;exclude=/lost+found &amp;ndash;exclude=/mnt &amp;ndash;exclude=/sys &amp;ndash;exclude=/media /&lt;/p&gt;
+
+&lt;p&gt;　　tar 是用来备份的程序c - 新建一个备份文档v - 详细模式， tar程序将在屏幕上实时输出所有信息。
+　　p - 保存许可，并应用到所有文件。
+　　z - 采用‘gzip’压缩备份文件，以减小备份文件体积。
+　 　f - 说明备份文件存放的路径， /media/backup.tgz 是本例子中备份文件名。
+　　最後一个参数是我们想要保存的目录.
+　　然后就是还原系统备份：&lt;/p&gt;
+
+&lt;p&gt;　　tar -xvpzf /media/backup.tgz -C /如果您使用的是bz2压缩的：
+　　tar -xvpjf /media/backup.tar.bz2 -C /参数x是告诉tar程序解压缩备份文件。 -C 参数是指定tar程序解压缩到的目录。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
