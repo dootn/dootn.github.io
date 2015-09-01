@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <url>
+        <loc>http://www.dootn.com/</loc>
+        <lastmod>2015-07-26T14:21:45+08:00</lastmod>
+        <priority>0</priority>
+    </url>
+    
+    <url>
+        <loc>http://www.dootn.com/post/2015/2015-07-26-UbuntuBackup/</loc>
+        <lastmod>2015-07-26T14:21:45+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dootn.com/post/2015/2015-07-25-UbuntuAmd/</loc>
+        <lastmod>2015-07-25T14:21:45+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://www.dootn.com/about</loc>
+        <lastmod>0001-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+</urlset>

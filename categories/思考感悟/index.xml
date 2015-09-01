@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>思考感悟 on Dootn&#39;s Blog</title>
+        <link>http://www.dootn.com/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/</link>
+        <language>zh-CN</language>
+        <author>Dootn</author>
+        <rights>Copyright (c) 2015,all rights reserved.</rights>
+        <updated>Sun, 26 Jul 2015 14:21:45 CST</updated>
+        
+        <item>
+            <title>Ubuntu的系统备份与还原</title>
+            <link>http://www.dootn.com/post/2015/2015-07-26-UbuntuBackup/</link>
+            <pubDate>Sun, 26 Jul 2015 14:21:45 CST</pubDate>
+            <author>Dootn</author>
+            <guid>http://www.dootn.com/post/2015/2015-07-26-UbuntuBackup/</guid>
+            <description>&lt;p&gt;1、 sudo su
+2、转到根目录： cd /
+　 　tar -cvpzf /media/backup.tgz &amp;ndash;exclude=/proc &amp;ndash;exclude=/lost+found &amp;ndash;exclude=/mnt &amp;ndash;exclude=/sys &amp;ndash;exclude=/media /&lt;/p&gt;
+
+&lt;p&gt;　　tar 是用来备份的程序c - 新建一个备份文档v - 详细模式， tar程序将在屏幕上实时输出所有信息。
+　　p - 保存许可，并应用到所有文件。
+　　z - 采用‘gzip’压缩备份文件，以减小备份文件体积。
+　 　f - 说明备份文件存放的路径， /media/backup.tgz 是本例子中备份文件名。
+　　最後一个参数是我们想要保存的目录.
+　　然后就是还原系统备份：&lt;/p&gt;
+
+&lt;p&gt;　　tar -xvpzf /media/backup.tgz -C /如果您使用的是bz2压缩的：
+　　tar -xvpjf /media/backup.tar.bz2 -C /参数x是告诉tar程序解压缩备份文件。 -C 参数是指定tar程序解压缩到的目录。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
